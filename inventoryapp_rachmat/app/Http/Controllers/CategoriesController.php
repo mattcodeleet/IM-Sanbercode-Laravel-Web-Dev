@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Models\Categories;
 
 class CategoriesController extends Controller
 {
@@ -16,7 +17,7 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-        'name' => 'required|in:Elektronik,Fashion,Parfum,Makanan',
+        'name' => 'required|in:Parfum Wanita,Parfum Pria,Parfum Unisex',
         'description' => 'required|min:10',
         ], [
             'name.required' => 'Silahkan pilih category',
@@ -45,7 +46,7 @@ class CategoriesController extends Controller
 
     public function show($id)
     {
-        $category = DB::table('categories')->find($id);
+        $category = Categories::find($id);
         return view('category.detail', ['category' => $category]);
     }
 
@@ -58,7 +59,7 @@ class CategoriesController extends Controller
     public function update($id, Request $request)
     {
         $request->validate([
-        'name' => 'required|in:Elektronik,Fashion,Parfum,Makanan',
+        'name' => 'required|in:Parfum Wanita,Parfum Pria,Parfum Unisex',
         'description' => 'required|min:10',
         ], [
             'name.required' => 'Silahkan pilih category',

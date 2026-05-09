@@ -20,10 +20,9 @@
     <label class="form-label">Category Name</label>
     <select class="form-control" name="name">
       <option>Pilih</option> 
-      <option>Elektronik</option> 
-      <option>Fashion</option> 
-      <option>Parfum</option> 
-      <option>Makanan</option> 
+      <option>Parfum Wanita</option> 
+      <option>Parfum Pria</option> 
+      <option>Parfum Unisex</option>
     </select>
   </div>
   <div class="mb-3">
